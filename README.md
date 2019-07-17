@@ -49,8 +49,8 @@
   
 #### PUT
 
-`Edit` : http://localhost:8000/api/products/{id}
+`Edit` : http://royaltrading.codexivesolutions.com/api/products/{id}
   
 #### DELETE
 
-`Delete` : http://localhost:8000/api/products/{id}
+`Delete` : http://royaltrading.codexivesolutions.com/api/products/{id}
