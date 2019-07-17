@@ -86,7 +86,7 @@ class ProductController extends Controller
             $response = array('success' => false,'message'=>'Product not exist!','data' => []);
             return response()->json($response, 404);
         }else{
-            $response = array('success' => false,'message'=>'','data' => $product);
+            $response = array('success' => true,'message'=>'','data' => $product);
             return response()->json($response, 404);
         }
     }
@@ -140,7 +140,7 @@ class ProductController extends Controller
         try {
             Product::where('id',$id)->update($request->all());
             $response = array('status'=> true,'message'=>'Product updated successfully.','data'=>[]);
-            return response()->json($response, 201); 
+            return response()->json($response, 200); 
         } catch (\Exception $ex) {
             $response = array('status'=> false,'message'=>$ex->getMessage(),'data'=>[]); 
             return response()->json($response, 401);
@@ -170,7 +170,7 @@ class ProductController extends Controller
         try {
             Product::destroy($id);
             $response = array('status'=> true,'message'=>'Product deleted successfully.','data'=>[]);
-            return response()->json($response, 201); 
+            return response()->json($response, 200); 
         } catch (\Exception $ex) {
             $response = array('status'=> false,'message'=>$ex->getMessage(),'data'=>[]); 
             return response()->json($response, 401);
