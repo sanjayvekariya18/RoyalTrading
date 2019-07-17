@@ -58,8 +58,8 @@ class ProductController extends Controller
             return response()->json($response, 400);           
         }
         try {
-            Product::insert($request->all());
-            $response = array('status'=> true,'message'=>'Product registerd successfully.','data'=>[]);
+            $product = Product::create($request->all());
+            $response = array('status'=> true,'message'=>'Product registerd successfully.','data'=>$product);
             return response()->json($response, 201); 
         } catch (\Exception $ex) {
             $response = array('status'=> false,'message'=>$ex->getMessage(),'data'=>[]); 
